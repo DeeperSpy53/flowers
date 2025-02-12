@@ -1,0 +1,23 @@
+.mainslider{
+    overflow: hidden;
+    height: 800px;
+    position: relative;
+    
+    img{
+        position: absolute;
+        width: 100vw;
+    }
+
+    h1{
+        padding-top: 200px;
+        text-align: center;
+        font-family: "Karton", sans-serif;
+        font-weight: 400;
+        font-size: 35px;
+        color: #6aae55;
+
+        span{
+            color: #5b4a58;
+        }
+    }
+}
