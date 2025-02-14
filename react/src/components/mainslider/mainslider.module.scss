@@ -16,13 +16,6 @@
     height: 699px;
     position: relative;
     transition: .5s;
-
-    button{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 40px auto 0 auto;
-    }
 }
 
 .mainslider__block1{
@@ -45,12 +38,194 @@
             color: #5b4a58;
         }
     }
+    button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 40px auto 0 auto;
+    }
 }
 
 .mainslider__block2{
     width: 100vw;
     height: 100%;
     background: url("../../assets/img/fon2.jpg") no-repeat;
+
+    h1{
+        margin-top: 155px;
+        font-family: "Karton", sans-serif;
+        font-size: 35px;
+        line-height: 85%;
+
+        p{
+            font-size: 55px;
+            letter-spacing: 0.02em;
+            color: #5b4a58;
+        }
+
+        span{
+            color: #6aae55;
+        }
+    }
+
+    button{
+        position: relative;
+        margin-top: 66px;
+        font-family: "Literal", sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        color: #fff;
+
+        border-radius: 30px;
+        width: 356px;
+        height: 60px;
+        background: #538d41;
+        transition: .2s;
+
+        &::after{ 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            content: 'Кнокпка';
+            margin-top: -12px;
+            border-radius: 30px;
+            width: 356px;
+            height: 60px;
+            background: #6aae55;
+        }
+
+        &:hover{
+            transition: .2s;
+            &::after{
+                background: #5c9f49;
+            }
+
+            background: #48753a;
+        }
+
+        &:active{
+            transition: .2s;
+            &::after{
+                background: #6dbc58;
+            }
+
+            background: #73bc5d;
+        }
+    }
+
+    button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 40px auto 0 auto;
+    }   
+}
+
+.msblock2__desc{
+    margin-top: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Literal", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #5b4a58;
+    // text-align: center;
+}
+
+.mainslider__block3{
+    width: 100vw;
+    height: 100%;
+    background: url('../../assets/img/fon3.jpg');
+
+    h1{
+        margin-top: 175px;
+        text-align: start;
+        font-family: "Karton", sans-serif;
+        font-size: 35px;
+        line-height: 85%;
+
+        p{
+            font-size: 55px;
+            letter-spacing: 0.02em;
+            color: #5b4a58;
+        }
+
+        span{
+            color: #6aae55;
+        }
+    }
+}
+
+.msblock3__wrapper{
+    max-width: 1107px;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: start;
+
+    button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin-top: 58px;
+        font-family: "Literal", sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        color: #fff;
+
+        border-radius: 30px;
+        width: 356px;
+        height: 60px;
+        background: #538d41;
+        transition: .2s;
+
+        &::after{ 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            content: 'Кнокпка';
+            margin-top: -12px;
+            border-radius: 30px;
+            width: 356px;
+            height: 60px;
+            background: #6aae55;
+        }
+
+        &:hover{
+            transition: .2s;
+            &::after{
+                background: #5c9f49;
+            }
+
+            background: #48753a;
+        }
+
+        &:active{
+            transition: .2s;
+            &::after{
+                background: #6dbc58;
+            }
+
+            background: #73bc5d;
+        }
+    }
+}
+
+.msblock3__desc{
+    margin-top: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Literal", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #5b4a58;
+    line-height: 120%;
+    // text-align: center;
 }
 
 .mainslider__main{

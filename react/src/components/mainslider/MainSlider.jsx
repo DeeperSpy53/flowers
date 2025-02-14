@@ -24,7 +24,21 @@ export default function MainSlider(){
                                 <p><span>Пример</span> текста</p> <br />
                                 Для <span>будущего</span> баннера
                         </h1>
-                        <Button>Каталог</Button>
+
+                        <p className={style.msblock2__desc}>По своей сути рыбатекст является альтернативой <br /> традиционному lorem ipsum, который вызывает.</p>
+                        <button>Кнокпка</button>
+                    </div>
+
+                    <div className={style.mainslider__block3}>
+                        <div className={style.msblock3__wrapper}>
+                        <h1>
+                                <p><span>Пример</span> текста</p> <br />
+                                Для бокового <span>будущего</span> баннера
+                        </h1>
+
+                        <p className={style.msblock3__desc}>По своей сути рыбатекст является альтернативой <br /> традиционному lorem ipsum, который вызывает.</p>
+                        <button>Кнокпка</button>
+                        </div>
                     </div>
                 </div>
 

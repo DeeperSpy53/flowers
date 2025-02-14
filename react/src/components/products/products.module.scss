@@ -1,0 +1,68 @@
+$timeSelect: .15s;
+
+.products {
+    overflow: hidden;
+    width: 100%;
+    background: #f9f8fb;
+}
+
+.products__wrapper{
+
+    max-width: 1096px;
+    margin: 100px auto 0 auto;
+}
+
+.products__block {
+}
+
+.products__sort {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    width: 828px;
+    height: 50px;
+    background: #fff;
+    padding: 0 60px 0 15px;
+
+    li{
+        cursor: pointer;
+        transition: $timeSelect all;
+        font-family: "Literal", sans-serif;
+        font-size: 16px;
+        color: #828282;
+
+        &:first-child{
+            cursor: default;
+        }
+    }
+
+    ul{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.prodsort_selected{
+    position: relative;
+    display: flex;
+    font-weight: 700;
+    color: #5b4a58;
+    transition: $timeSelect all;
+
+    &::after{
+        top: 20px;
+        position: absolute;
+        content: '';
+        border: 1px solid #5b4a58;
+        width: 100%;
+        height: 0px;
+        transition: $timeSelect all;
+    }
+}
+
+.products__list {
+}
+
+.products__search {
+}
