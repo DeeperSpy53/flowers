@@ -1,9 +1,12 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import style from './products.module.scss'
 import ProductItem from './ProductItem';
+import { FlowersContext } from '../../App';
+import { products } from '../../products';
 
 export default function Products(){
     const [sort, setSort] = useState(0);
+    const {flowers, setFlowers} = useContext(FlowersContext);
 
     function handleSetSort(value) {
         setSort(value);
@@ -14,7 +17,6 @@ export default function Products(){
             <div className={style.products__wrapper}>
                 <div className={style.products__block}>
                     <div className={style.products__sort}>
-
                         <ul>
                             <li>Сортировать по:</li>
                             <li className={sort===0?style.prodsort_selected:''} onClick={() => handleSetSort(0)}>Новизне</li>
@@ -25,7 +27,9 @@ export default function Products(){
                     </div>
 
                     <div className={style.products__list}>
-
+                        { products.map((product) => {
+                            return <ProductItem>{product}</ProductItem>
+                        }) }
                     </div>
                 </div>
 
