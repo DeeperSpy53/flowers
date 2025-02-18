@@ -7,22 +7,25 @@ $timeSelect: .15s;
 }
 
 .products__wrapper{
-
-    max-width: 1096px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1111px;
     margin: 100px auto 0 auto;
+    // height: 1431px;
 }
 
 .products__block {
+    width: 828px;
 }
 
 .products__sort {
     display: flex;
     align-items: center;
     border-radius: 10px;
-    width: 828px;
     height: 50px;
     background: #fff;
     padding: 0 60px 0 15px;
+    width: 100%;
 
     li{
         cursor: pointer;
@@ -62,11 +65,205 @@ $timeSelect: .15s;
 }
 
 .products__list {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 20px;
+    gap: 20px;
 }
 
 .products__search {
+    border-radius: 10px;
+    width: 262px;
+    height: 1068px;
+    background: #fff;
+
+    hr{
+        border: 1px solid #f2f2f2;
+        width: 262px;
+        height: 0px;
+    }
+}
+
+.productsSearch__field{
+    margin: 17px auto 0 auto;
+    input{
+        position: relative;
+        border-radius: 10px;
+        width: 233px;
+        height: 50px;
+        padding-left: 25px;
+    
+        font-family: "Literal", sans-serif;
+        font-size: 16px;
+        background: url("../../assets/img/icons/search.svg") no-repeat right, #fafafa;
+
+        &::placeholder{
+            color: #bdbdbd;
+        }
+
+        &::after{
+            display: block;
+            position: absolute;
+            content: '122121';
+            width: 14px;
+            height: 14px;
+        }
+    }
+}
+
+.productsSearch__prices{
+    display: flex;
+    flex-direction: column;
+    margin-top: 18px;
+    padding-left: 14px;
+
+    h4{
+        font-family: "Literal", sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        color: #bdbdbd;
+        margin-bottom: 10px;
+    }
+
+    label{
+        display: flex;
+        margin-bottom: 9px;
+        font-family: "Literal", sans-serif;
+        font-size: 16px;
+        color: #4f4f4f;
+
+        &:has(> input:checked){
+            &:before{
+                transition: .05s;
+                background: url('../../assets/img/icons/check_price.svg') no-repeat 100%, #e9ffe2;
+                background-position: center;
+                border: 1px solid #6aae55;
+            }
+
+            font-weight: 700;
+            color: #5b4a58;
+        }
+    }
+
+    label::before{
+        margin-right: 13px;
+
+        transition: .05s;
+        cursor: pointer;
+        content: '';
+        display: block;
+        border: 1px solid #bdbdbd;
+        border-radius: 4px;
+        width: 16px;
+        height: 16px; 
+    }
+
+    input{
+        display: none;
+    }
 }
 
 .productItem{
+    position: relative;
+    width: 263px;
+    font-family: "Literal", sans-serif;
+    padding-bottom: 20px;
+
+    h3{
+        width: 100%;
+        height: 48px;
+        padding: 16px 0 0 19px;
+        font-weight: 700;
+        font-size: 18px;
+        color: #5b4a58;
+        line-height: 120%;
+    }
+
+    p{
+        padding: 32px 0 0 23px;
+        font-size: 14px;
+        color: #828282;
+
+        .productItem__price{
+            font-size: 16px;
+            color: #5b4a58;
+
+            span{
+                font-weight: 700;
+            }
+
+            &::before{
+                top: 0;
+                position: absolute;
+                font-size: 12px;
+                text-decoration: line-through;
+                color: #bdbdbd;
+            }
+        }
+    }
+
+    button{
+        display: block;
+        font-family: "Literal", sans-serif;
+        font-weight: 700;
+        color: #fff;
+        font-size: 16px;
+
+        margin: 21px auto 0 auto;
+        border-radius: 10px;
+        width: 223px;
+        height: 40px;
+        background: #6aae55;
+        transition: 0.2s;
+
+        &:hover{
+            transition: 0.2s;
+            background: #48753a;
+        }
+
+        &:active{
+            transition: 0.2s;
+            background: #7fd664;
+        }
+    }
+}
+
+.productItem__discont{
+    ::after{
+        content: 'penis';
+    }
+}
+
+.productItem__fresh{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    top: 0;
+    position: absolute;
+    border-radius: 3px 10px;
+    width: 85px;
+    height: 25px;
+    background: #6aae55;
+
+    font-family: "Literal", sans-serif;
+    font-size: 14px;
+    color: #fff;
+}
+
+.productItem__action{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    top: 0;
+    position: absolute;
+    border-radius: 3px 10px;
+    width: 85px;
+    height: 25px;
+    background: #f2994a;
+
+    font-family: "Literal", sans-serif;
+    font-size: 14px;
+    color: #fff;
 }

@@ -3,9 +3,11 @@ import style from './products.module.scss'
 import ProductItem from './ProductItem';
 import { FlowersContext } from '../../App';
 import { products } from '../../products';
+import searchImg from '../../assets/img/icons/search.svg'
 
 export default function Products(){
     const [sort, setSort] = useState(0);
+    const [search, setSearch] = useState('');
     const {flowers, setFlowers} = useContext(FlowersContext);
 
     function handleSetSort(value) {
@@ -34,7 +36,35 @@ export default function Products(){
                 </div>
 
                 <div className={style.products__search}>
+                    <div className={style.productsSearch__field}>
+                        {/* <img src={searchImg} alt="" /> */}
+                        <input type="text" placeholder='Поиск' value={search} onChange={(e) => setSearch(e.target.value)}/>
+                    </div>
 
+                    <hr />
+
+                    <div className={style.productsSearch__prices}>
+                        <h4>Стоимость:</h4>
+                        <label>
+                            <input type="radio" name='price' id='price1'/>
+                            до 2500 руб.
+                        </label>
+
+                        <label>
+                            <input type="radio" name='price' id='price2'/>
+                            2500 - 4000 руб.
+                        </label>
+
+                        <label>
+                            <input type="radio" name='price' id='price3'/>
+                            4000 - 6000 руб.
+                        </label>
+
+                        <label>
+                            <input type="radio" name='price' id='price4'/>
+                            от 6000 руб.
+                        </label>
+                    </div>
                 </div>
             </div>
         </div>
