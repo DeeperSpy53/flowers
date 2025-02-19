@@ -3,10 +3,10 @@ import style from './products.module.scss'
 import ProductItem from './ProductItem';
 import { FlowersContext } from '../../App';
 import { products } from '../../products';
-import searchImg from '../../assets/img/icons/search.svg'
 
 export default function Products(){
     const [sort, setSort] = useState(0);
+    const [limit, setLimit] = useState(8);
     const [search, setSearch] = useState('');
     const {flowers, setFlowers} = useContext(FlowersContext);
 
@@ -29,21 +29,25 @@ export default function Products(){
                     </div>
 
                     <div className={style.products__list}>
-                        { products.map((product) => {
+                        { products.map((product, index) => {
+                            if(index > limit)
+                                return;
+
                             return <ProductItem>{product}</ProductItem>
                         }) }
                     </div>
+                    { products.length > limit &&
+                        <button className={style.products__more} onClick={() => setLimit(limit+8)}>Показать еще</button>
+                    }
                 </div>
 
                 <div className={style.products__search}>
                     <div className={style.productsSearch__field}>
-                        {/* <img src={searchImg} alt="" /> */}
                         <input type="text" placeholder='Поиск' value={search} onChange={(e) => setSearch(e.target.value)}/>
                     </div>
+                    <hr className={style.productSearch__hr1}/>
 
-                    <hr />
-
-                    <div className={style.productsSearch__prices}>
+                    <div className={`${style.productsSearch__prices} ${style.productsSearch__labels}`}>
                         <h4>Стоимость:</h4>
                         <label>
                             <input type="radio" name='price' id='price1'/>
@@ -63,6 +67,116 @@ export default function Products(){
                         <label>
                             <input type="radio" name='price' id='price4'/>
                             от 6000 руб.
+                        </label>
+                    </div>
+                    <hr className={style.productSearch__hr2}/>
+
+                    <div className={`${style.productsSearch__bouquet} ${style.productsSearch__labels}`}>
+                        <h4>Букет с ...</h4>
+
+                        <label>
+                            <input type="radio" name='bouquet' id='bouquet1'/>
+                            Розами
+                        </label>
+
+                        <label>
+                            <input type="radio" name='bouquet' id='bouquet2'/>
+                            Тюльпанами
+                        </label>
+
+                        <label>
+                            <input type="radio" name='bouquet' id='bouquet3'/>
+                            Гортензиями
+                        </label>
+
+                        <label>
+                            <input type="radio" name='bouquet' id='bouquet4'/>
+                            Подсолнухами
+                        </label> 
+
+                        <label>
+                            <input type="radio" name='bouquet' id='bouquet5'/>
+                            Орхидеями
+                        </label> 
+
+                        <label>
+                            <input type="radio" name='bouquet' id='bouquet6'/>
+                            Ирисами
+                        </label> 
+
+                        <label>
+                            <input type="radio" name='bouquet' id='bouquet7'/>
+                            Лилиями
+                        </label> 
+
+                        <label>
+                            <input type="radio" name='bouquet' id='bouquet7'/>
+                            Герберами
+                        </label> 
+
+                        <button>Показать еще</button>
+                    </div>
+                    <hr className={style.productSearch__hr3}/>
+
+                    <div className={`${style.productsSearch__package} ${style.productsSearch__labels}`}>
+                        <h4>Цветы упаковано:</h4>
+                        <label>
+                            <input type="radio" name='package' id='package1'/>
+                            Букетом
+                        </label>
+
+                        <label>
+                            <input type="radio" name='package' id='package2'/>
+                            В корзине
+                        </label>
+
+                        <label>
+                            <input type="radio" name='package' id='package3'/>
+                            В коробке
+                        </label>
+                    </div>
+                    <hr className={style.productSearch__hr4}/>
+
+                    <div className={`${style.productsSearch__gamma} ${style.productsSearch__labels}`}>
+                        <h4>Цветовая гамма:</h4>
+                        <label>
+                            <input type="radio" name='gamma' id='gamma1'/>
+                            Белая
+                        </label>
+
+                        <label>
+                            <input type="radio" name='gamma' id='gamma2'/>
+                            Розовая
+                        </label>
+
+                        <label>
+                            <input type="radio" name='gamma' id='gamma3'/>
+                            Красная
+                        </label>
+
+                        <label>
+                            <input type="radio" name='gamma' id='gamma4'/>
+                            Желтая
+                        </label>
+
+                        <label>
+                            <input type="radio" name='gamma' id='gamma5'/>
+                            Оранжевая
+                        </label>
+
+                        <label>
+                            <input type="radio" name='gamma' id='gamma6'/>
+                            Бордовая
+                        </label>
+
+                        <label>
+                            <input type="radio" name='gamma' id='gamma7'/>
+                            Синяя
+                        </label>
+
+                        <label>
+                            <input type="radio" name='gamma' id='gamma8'/>
+                            Фиолетовая
                         </label>
                     </div>
                 </div>

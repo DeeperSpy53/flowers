@@ -16,6 +16,29 @@ $timeSelect: .15s;
 
 .products__block {
     width: 828px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.products__more{
+    position: relative;
+    margin-top: 40px;
+    background: none;
+    font-family: "Literal", sans-serif;
+    font-size: 18px;
+    color: #6aae55;
+    margin-bottom: 20px;
+
+    &::after{
+        top: 14px;
+        position: absolute;
+        display: block;
+        content: '.................................................';
+        font-family: "Literal", sans-serif;
+        font-size: 10px;
+        color: #6aae55;
+    }
 }
 
 .products__sort {
@@ -79,9 +102,25 @@ $timeSelect: .15s;
 
     hr{
         border: 1px solid #f2f2f2;
-        width: 262px;
+        width: 100%;
         height: 0px;
     }
+}
+
+.productSearch__hr1{
+    margin-top: 15px;
+}
+
+.productSearch__hr2{
+    margin: 23px 0 24px 0;
+}
+
+.productSearch__hr3{
+    margin: 26px 0 21px 0;
+}
+
+.productSearch__hr4{
+    margin: 23px 0 24px 0;
 }
 
 .productsSearch__field{
@@ -110,11 +149,9 @@ $timeSelect: .15s;
         }
     }
 }
-
-.productsSearch__prices{
+.productsSearch__labels{
     display: flex;
     flex-direction: column;
-    margin-top: 18px;
     padding-left: 14px;
 
     h4{
@@ -122,15 +159,18 @@ $timeSelect: .15s;
         font-weight: 700;
         font-size: 14px;
         color: #bdbdbd;
-        margin-bottom: 10px;
     }
 
     label{
         display: flex;
-        margin-bottom: 9px;
         font-family: "Literal", sans-serif;
         font-size: 16px;
+        margin-bottom: 15px;
         color: #4f4f4f;
+
+        &:last-child{
+            margin-bottom: 0;
+        }
 
         &:has(> input:checked){
             &:before{
@@ -146,8 +186,6 @@ $timeSelect: .15s;
     }
 
     label::before{
-        margin-right: 13px;
-
         transition: .05s;
         cursor: pointer;
         content: '';
@@ -156,10 +194,57 @@ $timeSelect: .15s;
         border-radius: 4px;
         width: 16px;
         height: 16px; 
+        margin-right: 13px;
     }
 
     input{
         display: none;
+    }
+}
+
+.productsSearch__prices{
+    margin-top: 18px;
+
+    h4{
+        margin-bottom: 15px;
+    }
+}
+
+.productsSearch__bouquet{
+    h4{
+        margin-bottom: 10px;
+    }
+
+    button{
+        background: none;
+        font-family: "Literal", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        text-align: center;
+        color: #bdbdbd;
+        transition: .1s;
+
+        &:hover{
+            transition: .1s;
+            color: #d6d6d6;
+        }
+
+        &:active{
+            transition: .1s;
+            color: #9e9e9e;
+        }
+    }
+}
+
+.productsSearch__package{
+    h4{
+        margin-bottom: 14px;
+    }
+}
+
+.productsSearch__gamma{
+    h4{
+        margin-bottom: 14px;
     }
 }
 
@@ -230,7 +315,7 @@ $timeSelect: .15s;
 
 .productItem__discont{
     ::after{
-        content: 'penis';
+        content: '';
     }
 }
 
