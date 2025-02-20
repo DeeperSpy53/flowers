@@ -5,6 +5,7 @@ import Advantages from './components/advantages/Advantages'
 import Products from './components/products/Products'
 import Steps from './components/steps/Steps'
 import { products } from './products.js'
+import Reviews from './components/reviews/Reviews.jsx'
 
 export const FlowersContext = createContext();
 
@@ -18,6 +19,7 @@ function App() {
       <Advantages/>
       <Products/>
       <Steps/>
+      <Reviews/>
     </FlowersContext.Provider>
   )
 }

@@ -37,7 +37,9 @@ export default function Products(){
                         }) }
                     </div>
                     { products.length > limit &&
-                        <button className={style.products__more} onClick={() => setLimit(limit+8)}>Показать еще</button>
+                        <div className={style.products__wrapperbtn}>
+                            <button className={style.products__more} onClick={() => setLimit(limit+8)}>Показать еще</button>
+                        </div>
                     }
                 </div>
 

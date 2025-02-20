@@ -1,9 +1,11 @@
 $timeSelect: .15s;
 
 .products {
+    position: relative;
     overflow: hidden;
     width: 100%;
     background: #f9f8fb;
+    padding-bottom: 135px;
 }
 
 .products__wrapper{
@@ -21,14 +23,19 @@ $timeSelect: .15s;
     align-items: center;
 }
 
+.products__wrapperbtn{
+    position: absolute;
+    bottom: 70px;
+}
+
 .products__more{
     position: relative;
-    margin-top: 40px;
+    // margin-top: 40px;
     background: none;
     font-family: "Literal", sans-serif;
     font-size: 18px;
     color: #6aae55;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
 
     &::after{
         top: 14px;
