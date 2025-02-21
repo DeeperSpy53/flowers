@@ -6,6 +6,8 @@ import Products from './components/products/Products'
 import Steps from './components/steps/Steps'
 import { products } from './products.js'
 import Reviews from './components/reviews/Reviews.jsx'
+import Remark from './components/remark/Remark.jsx'
+import Footer from './components/footer/Footer.jsx'
 
 export const FlowersContext = createContext();
 
@@ -20,6 +22,8 @@ function App() {
       <Products/>
       <Steps/>
       <Reviews/>
+      <Remark/>
+      <Footer/>
     </FlowersContext.Provider>
   )
 }
