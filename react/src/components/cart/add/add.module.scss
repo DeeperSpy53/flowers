@@ -1,0 +1,91 @@
+.additem{
+    display: flex;
+    max-width: 367px;
+}
+
+.addItem__block{
+    margin-left: 20px;
+    h3{
+        font-family: "Literal", sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        color: #5b4a58;
+        line-height: 135%;
+    }
+}
+
+.addItem__price{
+    margin: 11px 0 6px 0;
+    display: flex;
+    font-family: "Literal", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    color: #5b4a58;
+
+    p{
+        font-weight: 400;
+        font-size: 14px;
+    }
+}
+
+.addItem__btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 139px;
+
+    button{
+        border-radius: 4px;
+        width: 21px;
+        height: 21px;
+        
+        &:first-child{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &::after{
+                display: block;
+                content: '';
+                border: 2px solid #5b4a58;
+                width: 9px;
+            }
+        }
+
+        &:last-child{
+            background: #6aae55;
+        }
+    }
+    
+    span{
+        display: flex;
+        font-family: "Literal", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 150%;
+        color: #5b4a58;
+
+        p{
+            font-weight: 400;
+            font-size: 14px;
+        }
+    }
+}
+
+.addItem__btn{
+    margin-top: 17px;
+    border-radius: 5px;
+    width: 169px;
+    height: 40px;
+    background: #6aae55;
+
+    font-family: "Literal", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    color: #fff;
+}
+
+.addItemBtn__added{
+    background: #bdbdbd;
+}

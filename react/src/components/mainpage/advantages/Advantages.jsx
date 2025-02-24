@@ -1,8 +1,8 @@
 import style from './advantages.module.scss'
-import img1 from '../../assets/img/icons/advantages/1.svg'
-import img2 from '../../assets/img/icons/advantages/2.svg'
-import img3 from '../../assets/img/icons/advantages/3.svg'
-import img4 from '../../assets/img/icons/advantages/4.svg'
+import img1 from '../../../assets/img/icons/advantages/1.svg'
+import img2 from '../../../assets/img/icons/advantages/2.svg'
+import img3 from '../../../assets/img/icons/advantages/3.svg'
+import img4 from '../../../assets/img/icons/advantages/4.svg'
 
 import AdvantageItem from './AdvantageItem'
 

@@ -1,10 +1,10 @@
 import style from './reviews.module.scss'
-import img1 from '../../assets/img/reviews_photo/1.jpg'
-import img2 from '../../assets/img/reviews_photo/2.jpg'
-import img3 from '../../assets/img/reviews_photo/3.jpg'
-import img4 from '../../assets/img/reviews_photo/4.jpg'
+import img1 from '../../../assets/img/reviews_photo/1.jpg'
+import img2 from '../../../assets/img/reviews_photo/2.jpg'
+import img3 from '../../../assets/img/reviews_photo/3.jpg'
+import img4 from '../../../assets/img/reviews_photo/4.jpg'
 
-import {reviews} from '../../reviews.js'
+import {reviews} from '../../../reviews.js'
 import ReviewItem from './ReviewItem.jsx'
 
 export default function Reviews(){

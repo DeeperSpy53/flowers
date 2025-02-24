@@ -1,4 +1,6 @@
 .footer__nav{
+    position: relative;
+    z-index: 10;
     width: 100%;
     background: #746471;
 }
@@ -44,5 +46,133 @@
             }
         }
 
+    }
+}
+
+.footer__info{
+    width: 100%;
+    background: #5b4a58;
+
+    hr{
+        width: 100%;
+        border: 1px solid #a29bb4;
+    }
+
+    small{
+        padding: 22px 0;
+        display: block;
+        text-align: center;
+        font-family: "Literal", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 100%;
+        color: #a69ba4;
+    }
+}
+
+.footerInfo__wrapper{
+    width: 1110px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 33px 0 33px 0;
+
+    h3{
+        margin-bottom: 20px;
+        font-family: "Literal", sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        color: #6aae55;
+    }
+}
+
+.footerInfo__contacts{
+    div{
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+
+        span{
+            line-height: 130%;
+            margin-left: 20px;
+            font-family: "Literal", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            color: #fff;
+        }
+    }
+}
+
+.footerInfo__clients{
+    ul{
+        display: flex;
+        flex-direction: column;
+
+        a{
+            font-family: "Literal", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            color: #fff;
+        }
+    }
+}
+
+.footerInfo__form{
+    display: flex;
+    flex-direction: column;
+
+    textarea{
+        border-radius: 2px;
+        width: 451px;
+        height: 75px;
+        resize: none;
+    }
+
+    button{
+        margin-top: 10px;
+        align-self: flex-end;
+        font-family: "Literal", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        color: #fff;
+        border-radius: 5px;
+        width: 222px;
+        height: 40px;
+        background: #6aae55;
+        transition: .15s;
+
+        &:hover{
+            transition: .15s;
+            background: #76c45e;
+        }
+
+        &:active{
+            transition: .15s;
+            background: #406933;
+        }
+    }
+}
+
+.footerInfo__inputs{
+    display: flex;
+    margin-bottom: 10px;
+    label{
+        display: flex;
+        flex-direction: column;
+        font-family: "Literal", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        color: #f2f2f2;
+
+        input{
+            margin-top: 5px;
+            border-radius: 2px;
+            width: 218px;
+            height: 33px;
+        }
+
+        &:first-child{
+            margin-right: 12px;
+        }
     }
 }

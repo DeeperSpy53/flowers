@@ -1,8 +1,8 @@
 import { useContext, useState } from 'react'
 import style from './products.module.scss'
 import ProductItem from './ProductItem';
-import { FlowersContext } from '../../App';
-import { products } from '../../products';
+import { FlowersContext } from '../../../App';
+import { products } from '../../../products';
 
 export default function Products(){
     const [sort, setSort] = useState(0);

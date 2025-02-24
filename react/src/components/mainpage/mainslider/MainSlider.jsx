@@ -1,8 +1,8 @@
 import style from './mainslider.module.scss'
 // import fonImg from '../../assets/img/fon1.jpg'
 import Button from '../button/Button'
-import ellipseImg from '../../assets/img/icons/ellipse.svg'
-import ellipseFulledImg from '../../assets/img/icons/ellipse_fulled.svg'
+import ellipseImg from '../../../assets/img/icons/ellipse.svg'
+import ellipseFulledImg from '../../../assets/img/icons/ellipse_fulled.svg'
 import { useState } from 'react'
 
 export default function MainSlider(){

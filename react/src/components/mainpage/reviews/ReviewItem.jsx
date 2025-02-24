@@ -1,7 +1,7 @@
 import style from './reviews.module.scss'
 
-import starImg from '../../assets/img/icons/star.svg'
-import star2Img from '../../assets/img/icons/star_yellow.svg'
+import starImg from '../../../assets/img/icons/star.svg'
+import star2Img from '../../../assets/img/icons/star_yellow.svg'
 import { useEffect, useState } from 'react'
 
 export default function ReviewItem({name, date, city, grade, review}){

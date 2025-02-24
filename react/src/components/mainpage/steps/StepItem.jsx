@@ -1,5 +1,5 @@
 import style from './steps.module.scss'
-import wreathImg from '../../assets/img/icons/wreath.svg'
+import wreathImg from '../../../assets/img/icons/wreath.svg'
 
 export default function StepItem({title, desc, num}){
     return(

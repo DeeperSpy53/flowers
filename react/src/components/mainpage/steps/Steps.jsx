@@ -1,7 +1,7 @@
 import StepItem from './StepItem'
 import style from './steps.module.scss'
-import leftImg from '../../assets/img/steps_left.png'
-import rigthImg from '../../assets/img/steps_rigth.png'
+import leftImg from '../../../assets/img/steps_left.png'
+import rigthImg from '../../../assets/img/steps_rigth.png'
 
 export default function steps(){
     return(
