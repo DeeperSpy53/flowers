@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Path from '../components/path/Path'
 import style from './cart.module.scss'
+import querstionImg from '../assets/img/icons/question.svg'
 
 export default function Cart() {
     const [delivery, setDelivery] = useState('delivery');
@@ -9,7 +10,16 @@ export default function Cart() {
     const date = new Date();
     const dateNow = `${date.getFullYear()}-${date.getMonth()+1<10?'0'+(date.getMonth()+1):(date.getMonth()+1)}-${date.getDate()}`;
     const [dateState, setDateState] = useState(dateNow)
-    const [dateShowState, setDateShowState] = useState(dateNow)
+    const [dateShowState, setDateShowState] = useState(`${date.getDate()}.${date.getMonth()+1<10?'0'+(date.getMonth()+1):(date.getMonth()+1)}.${date.getFullYear()}`)
+    const [time, setTime] = useState(`${date.getHours()}:${date.getMinutes()}`)
+
+
+    function handleDateDeliveryClick(e) {
+        setDateState(e.target.value)
+
+        const res = e.target.value.replace(/(\d+)-(\d+)-(\d+)/,"$3.$2.$1");
+        setDateShowState(res)
+    }
 
     return (
     <div className={style.cart}>
@@ -42,7 +52,6 @@ export default function Cart() {
                                 <span>г. Владивосток, &nbsp;ул. Пушкинская, 17 А</span>
                             </div>
                         </label>
-                       
                     </div>
                 </div>
 
@@ -54,8 +63,8 @@ export default function Cart() {
 
                         <div>
                             <label>
-                                <span>{date.getDate()}.{date.getMonth()+1<10?'0'+(date.getMonth()+1):(date.getMonth()+1)}.{date.getFullYear()}</span>
-                                <input type="date" value={dateState} onChange={(e) => setDateState(e.target.value)}/>
+                                <span>{dateShowState}</span>
+                                <input type="date" value={dateState} onChange={handleDateDeliveryClick}/>
                             </label>
                         </div>
                     </div>
@@ -66,11 +75,14 @@ export default function Cart() {
                                 <ellipse cx="9.8374" cy="10" rx="9.8374" ry="10" fill="#E0E0E0" />
                                 <ellipse cx="9.83735" cy="10" rx="6.88618" ry="7" fill="#BDBDBD" />
                             </svg>
-                            <input type="radio" name='time' value={dateInput} checked={dateInput == 'time'} onChange={() => setDateInput('date')}/>
+                            <input type="radio" name='time' value={dateInput} checked={dateInput == 'time'} onChange={() => setDateInput('time')}/>
                             Указать промежуток времени
                         </label>   
 
-                        <input type="time" />
+                        <label>
+                            <span>{time}</span>
+                            <input type="time" value={time} onChange={(e) => setTime(e.target.value)}/>
+                        </label>
                     </div>
                     <hr />
                     <div className={style.deliveryDate__client}>
@@ -81,11 +93,13 @@ export default function Cart() {
                             </svg>
                             <input type="radio" name='client' value={dateInput} checked={dateInput == 'client'} onChange={() => setDateInput('client')}/>
                             Позвонить получателю для уточнения времени и адреса
+
+                            <img src={querstionImg} alt="" title="eshkere"/>
                         </label> 
 
                         <label>
                             <input type="checkbox" />   
-                            По телефону <span>не говорить</span> что это цветы
+                            По телефону&nbsp;<span>не говорить</span>&nbsp;что это цветы
                         </label>  
                     </div>
                 </div>
