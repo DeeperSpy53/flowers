@@ -2,19 +2,22 @@ import { useState } from 'react'
 import Path from '../components/path/Path'
 import style from './cart.module.scss'
 import querstionImg from '../assets/img/icons/question.svg'
+import CartInput from '../components/cart/cartinput/CartInput' 
+import CartItem from '../components/cart/cartintem/CartItem'
 
 export default function Cart() {
     const [delivery, setDelivery] = useState('delivery');
     const [dateInput, setDateInput] = useState('time');
     const [recevier, setRecevier] = useState('myself');
-    const [phone, setPhone] = useState('+7(');
+    const [pay, setPay] = useState('cash');
+    const [phone, setPhone] = useState();
+    const [phoneCont, setPhoneCont] = useState();
 
     const date = new Date();
     const dateNow = `${date.getFullYear()}-${date.getMonth()+1<10?'0'+(date.getMonth()+1):(date.getMonth()+1)}-${date.getDate()}`;
     const [dateState, setDateState] = useState(dateNow)
     const [dateShowState, setDateShowState] = useState(`${date.getDate()}.${date.getMonth()+1<10?'0'+(date.getMonth()+1):(date.getMonth()+1)}.${date.getFullYear()}`)
     const [time, setTime] = useState(`${date.getHours()}:${date.getMinutes()}`)
-
 
     function handleDateDeliveryClick(e) {
         setDateState(e.target.value)
@@ -23,26 +26,9 @@ export default function Cart() {
         setDateShowState(res)
     }
 
-    function handleTelChange(e) {
-        console.log(e.target.value);
-        
-
-        switch(phone.length){
-            case 3:{
-
-                break;
-            }
-            case 4:{
-                setPhone(phone + '' + e.target.value[4])
-                break;
-            }
-        }
-    }
-
     return (
     <div className={style.cart}>
-
-        <div className={style.cart__wrapper}>
+        <form className={style.cart__wrapper}>
             <div className={style.cart__delivery}>
                 <Path>Корзина</Path>
                 <h2>Оформление заказа</h2>
@@ -147,21 +133,98 @@ export default function Cart() {
 
                     <div className={style.deliveryRec__column}>
                         <label>
-                            Имя и фамилия
+                            <span>Имя и фамилия</span>
                             <input type="text" placeholder='Анатолий петров'/>
                         </label>
                         <label>
-                            Моб. номер
-                            <input type="tel" placeholder='+_(___) ___-__-__' value={phone} autoComplete='tel' onChange={handleTelChange}/>
+                            <span>Моб. номер</span>
+                            <CartInput phone={phone} setPhone={setPhone}/>
                         </label>
                     </div>
+
+                    <div className={style.deliveryRec__column}>
+                        <label>
+                            <span>Город</span>
+                            <input type="text" value='Владивосток' disabled={true}/>
+                        </label>
+                        <label>
+                            <span>Адрес</span>
+                            <input type="text" placeholder='г. Владивосток, ул. Фокина, 15'/>
+                        </label>
+                    </div>
+
+                    <div className={style.deliveryRec__note}>
+                        <span>Примечание</span>
+
+                        <textarea name="note" id="note"></textarea>
+                    </div>
                 </div>
+
+                <div className={style.delivery__contacts}>
+                    <h3>Ваши контакты</h3>
+
+                    <div className={style.deliveryCont__list}>
+                        <label>
+                            <span>Имя и фамилия</span>
+                            <input type="text" placeholder='Анатолий Петров'/>
+                        </label>
+
+                        <label>
+                            <span>Моб. номер</span>
+                            <CartInput phone={phoneCont} setPhone={setPhoneCont}/>
+                        </label>
+
+                        <label>
+                            <span>Город</span>
+                            <input type="text" placeholder='Владивосток'/>
+                        </label>
+                        </div>
+                </div>
+
+                <div className={style.delivery__pay}>
+                    <h3>Способ оплаты</h3>
+
+                    <div className={style.deliveryPay__list}>
+                        <label className={pay=='cash'?style.delivery__sel:''}>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="9.8374" cy="10" rx="9.8374" ry="10" fill="#E0E0E0" />
+                                <ellipse cx="9.83735" cy="10" rx="6.88618" ry="7" fill="#BDBDBD" />
+                            </svg>
+                            <input type="radio" name='cash' value={pay} checked={pay == 'cash'} onChange={() => setPay('cash')}/>
+                            Оплата наличными во время получения (самовызов)
+                        </label>  
+                        <hr />
+                        <label className={pay=='cash2'?style.delivery__sel:''}>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="9.8374" cy="10" rx="9.8374" ry="10" fill="#E0E0E0" />
+                                <ellipse cx="9.83735" cy="10" rx="6.88618" ry="7" fill="#BDBDBD" />
+                            </svg>
+                            <input type="radio" name='cash2' value={pay} checked={pay == 'cash2'} onChange={() => setPay('cash2')}/>
+                            Оплата наличными курьеру (только, если получатель — Вы)
+                        </label>  
+                        <hr />
+                        <label className={pay=='online'?style.delivery__sel:''}>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="9.8374" cy="10" rx="9.8374" ry="10" fill="#E0E0E0" />
+                                <ellipse cx="9.83735" cy="10" rx="6.88618" ry="7" fill="#BDBDBD" />
+                            </svg>
+                            <input type="radio" name='online' value={pay} checked={pay == 'online'} onChange={() => setPay('online')}/>
+                            Онлайн оплата — Сбербанк
+                        </label>  
+                    </div>
+                </div>
+
+                <button className={style.cart__submit} type='submit'>Оформить заказ</button>
             </div>
 
-            <div className={style.cart__list}>
+            <div className={style.cart__products}>
                 <h2>Корзина</h2>
+
+                <div className={style.cartProd__list}>
+                    <CartItem name={'мяу'} img={'/products/1.jpg'} price={228} cat='Большой'/>
+                </div>
             </div>
-        </div>
+        </form>
     </div>
     )
 }
