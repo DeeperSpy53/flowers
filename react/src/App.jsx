@@ -5,6 +5,7 @@ import Footer from './components/footer/Footer.jsx'
 import MainPage from './pages/MainPage.jsx'
 import Card from './pages/Card.jsx'
 import Cart from './pages/Cart.jsx'
+import PersonalCab from './pages/PersonalCab.jsx'
 
 export const FlowersContext = createContext();
 
@@ -16,7 +17,8 @@ function App() {
       <Header/>
       {/* <MainPage /> */}
       {/* <Card {...products[0]}/> */}
-      <Cart/>
+      {/* <Cart/> */}
+      <PersonalCab/>
       <Footer/>
     </FlowersContext.Provider>
   )

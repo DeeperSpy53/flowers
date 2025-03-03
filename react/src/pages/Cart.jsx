@@ -12,6 +12,7 @@ export default function Cart() {
     const [pay, setPay] = useState('cash');
     const [phone, setPhone] = useState();
     const [phoneCont, setPhoneCont] = useState();
+    const [totalPrice, setTotalPrice] = useState(0)
 
     const date = new Date();
     const dateNow = `${date.getFullYear()}-${date.getMonth()+1<10?'0'+(date.getMonth()+1):(date.getMonth()+1)}-${date.getDate()}`;
@@ -26,9 +27,13 @@ export default function Cart() {
         setDateShowState(res)
     }
 
+    function handleSubmit(e) {
+        e.preventDefault();
+    }
+
     return (
     <div className={style.cart}>
-        <form className={style.cart__wrapper}>
+        <form className={style.cart__wrapper} onSubmit={handleSubmit}>
             <div className={style.cart__delivery}>
                 <Path>Корзина</Path>
                 <h2>Оформление заказа</h2>
@@ -222,7 +227,16 @@ export default function Cart() {
 
                 <div className={style.cartProd__list}>
                     <CartItem name={'мяу'} img={'/products/1.jpg'} price={228} cat='Большой'/>
+                    <CartItem name={'мяу'} img={'/products/1.jpg'} price={228} cat='Большой'/>
                 </div>
+
+                <div className={style.cartProd__totalprice}>
+                    <h3>Итоговая стоимость:</h3>
+                    <span>{totalPrice} руб.</span>
+                    <hr />
+
+                    <p>Зайдите в <a href="#">личный кабинет</a> чтобы проверить вашу СКИДКУ!</p>
+                </div>  
             </div>
         </form>
     </div>

@@ -5,6 +5,7 @@
     width: 401px;
     height: 228px;
     background: #fff;
+    margin-bottom: 20px;
 
     img{
         border-radius: 10px;
@@ -112,6 +113,14 @@
     top: 16px;
 
     path{
-        
+        transition: .1s;
+        &:hover{
+            transition: .15s;
+            stroke: #7d6579;
+        }
+        &:active{
+            transition: .1s;
+            stroke: #231c22;
+        }
     }
 }

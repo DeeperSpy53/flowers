@@ -1,0 +1,59 @@
+.personalcab{
+    background: #f9f8fb;
+    // height: 577px;
+}
+
+.personalcab__wrapper{
+    width: 1110px;
+    margin: 0 auto;
+    display: flex;
+    height: 100%;
+}
+
+.personalcab__menu{
+    padding: 36px 15px 0 15px;
+    // height: 577px;
+    min-height: 100%;
+    background: #f2f2f2;
+    width: 263px;
+
+    h2{
+        font-family: "Karton", sans-serif;
+        font-weight: 400;
+        font-size: 24px;
+        color: #5b4a58;
+    }
+
+    ul{
+        margin-top: 27px;
+        border-radius: 10px;
+        background: #fff;
+
+        li{
+            transition: .1s;
+            cursor: pointer;
+            padding-left: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #e0e0e0;
+            height: 50px;
+            font-family: "Literal", sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: #5b4a58;
+
+            img{
+                margin-right: 11px;
+            }
+        }
+    }
+}
+
+.pesonalcabm__selected{
+    background: #f6fff3;
+}
+
+.personalcab__block{
+    padding-left: 20px;
+}
