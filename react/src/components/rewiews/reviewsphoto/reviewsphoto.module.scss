@@ -1,0 +1,52 @@
+.reviewsphoto{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    img{
+        border-radius: 10px;
+        width: 404px;
+        height: 289px;
+    }
+}
+
+.reviewsphotoitem{
+    border-radius: 10px;
+    width: 404px;
+    height: 289px;
+    background: #fff;
+    padding: 37px 30px;
+
+    h3{
+        font-family: "Literal", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        color: #6aae55;
+        margin: 7px 0 14px 0;
+    }
+
+    span{
+        display: block;
+        font-family: "Literal", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        color: #5b4a58;
+        height: 340px;
+    }
+
+    button{
+        display: flex;
+        align-items: center;
+        font-family: "Literal", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        color: #6aae55;
+        background: none;
+        margin-left: auto;
+
+        svg{
+            margin: 5px 0 0 14px;
+        }
+    }
+}
