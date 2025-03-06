@@ -17,6 +17,9 @@
 }
 
 .contactinfo__contacts{
+    display: flex;
+    justify-content: space-between;
+
     ul{
         padding: 24px 0 26px 0;
         border-radius: 10px;
@@ -60,6 +63,53 @@
                 font-size: 16px;
                 color: #5b4a58;
             }
+        }
+    }
+}
+
+.contactinfo__map{
+    border-radius: 10px;
+    width: 825px;
+    height: 404px;
+}
+
+.contactinfo__form{
+    margin-top: 20px;
+    padding: 21px 30px 30px 30px;
+    max-width: 1110px;
+    height: 301px;
+    border-radius: 10px;
+    background: #fff;
+
+    h2{
+        text-align: center;
+        font-family: "Literal", sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        text-align: center;
+        color: #5b4a58;
+    }
+}
+
+.form__block{
+    display: flex;
+    flex-direction: column;
+
+    input{
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        width: 327px;
+        height: 40px;
+        background: #fafafa;
+
+        font-family: "Literal", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+        padding-left: 14px;
+
+        &::placeholder{
+            color: #bdbdbd;
         }
     }
 }
