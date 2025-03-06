@@ -1,0 +1,35 @@
+.reviews__pages{
+    padding: 36px 0 55px 0;
+    display: flex;
+    justify-content: center;
+    font-family: "Literal", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    color: #e0e0e0;
+}
+
+.reviews__page{
+    user-select: none;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    background: #f2f2f2;
+    transition: .25s;
+
+    &:last-child{
+        margin-right: 0;
+    }
+}
+
+.reviewsPage__sel{
+    transition: .25s;
+    color: #6aae55;
+    border: 1px solid #6aae55;
+    background: #fff;
+}

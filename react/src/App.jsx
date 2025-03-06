@@ -7,6 +7,7 @@ import Card from './pages/Card.jsx'
 import Cart from './pages/Cart.jsx'
 import PersonalCab from './pages/PersonalCab.jsx'
 import ReviewsPage from './pages/reviews/ReviewsPage.jsx'
+import ContactInfo from './pages/contactinfo/ContactInfo.jsx'
 
 export const FlowersContext = createContext();
 
@@ -20,7 +21,8 @@ function App() {
       {/* <Card {...products[0]}/> */}
       {/* <Cart/> */}
       {/* <PersonalCab/> */}
-      <ReviewsPage/>
+      {/* <ReviewsPage/> */}
+      <ContactInfo/>
       <Footer/>
     </FlowersContext.Provider>
   )

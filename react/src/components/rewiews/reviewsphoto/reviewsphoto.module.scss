@@ -11,11 +11,12 @@
 }
 
 .reviewsphotoitem{
+    position: relative;
     border-radius: 10px;
     width: 404px;
     height: 289px;
     background: #fff;
-    padding: 37px 30px;
+    padding: 37px 30px 0 30px;
 
     h3{
         font-family: "Literal", sans-serif;
@@ -25,17 +26,24 @@
         margin: 7px 0 14px 0;
     }
 
-    span{
-        display: block;
+    p{
+        // display: block;
         font-family: "Literal", sans-serif;
         font-weight: 400;
         font-size: 14px;
         line-height: 150%;
         color: #5b4a58;
-        height: 340px;
+        height: 145px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: initial;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 7;
     }
 
     button{
+        position: absolute;
         display: flex;
         align-items: center;
         font-family: "Literal", sans-serif;
@@ -43,10 +51,57 @@
         font-size: 16px;
         color: #6aae55;
         background: none;
-        margin-left: auto;
+        right: 30px;
+        bottom: 35px;
 
         svg{
             margin: 5px 0 0 14px;
         }
+    }
+}
+
+.reviewsmodal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 12;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.reviewsmodal__wrapper{
+    height: 100%;
+    position: relative;
+    overflow: auto;
+    border-radius: 10px;
+    width: 581px;
+    background: #fff;
+    padding: 31px 40px 33px 40px;
+
+    svg{
+        position: absolute;
+        cursor: pointer;
+        right: 11px;
+        top: 11px;
+    }
+
+    img{
+        border-radius: 10px;
+        width: 501px;
+        height: 358px;
+    }
+
+    span{
+        margin-top: 25px;
+        display: block;
+        font-family: "Literal", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: #5b4a58;
     }
 }
