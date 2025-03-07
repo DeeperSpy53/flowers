@@ -23,7 +23,7 @@
     ul{
         padding: 24px 0 26px 0;
         border-radius: 10px;
-        width: 263px;
+        max-width: 263px;
         background: #fff;
 
         hr{
@@ -69,12 +69,12 @@
 
 .contactinfo__map{
     border-radius: 10px;
-    width: 825px;
+    max-width: 825px;
     height: 404px;
 }
 
 .contactinfo__form{
-    margin-top: 20px;
+    margin: 20px 0 30px 0;
     padding: 21px 30px 30px 30px;
     max-width: 1110px;
     height: 301px;
@@ -88,12 +88,26 @@
         font-size: 18px;
         text-align: center;
         color: #5b4a58;
+        margin-bottom: 25px;
+    }
+
+    button{
+        display: block;
+        border-radius: 5px;
+        width: 222px;
+        height: 40px;
+        background: #6aae55;
+        margin: 15px 0 0 auto;
+        font-family: "Literal", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        color: #fff;
     }
 }
 
 .form__block{
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
 
     input{
         border: 1px solid #e0e0e0;
@@ -107,6 +121,40 @@
         font-size: 16px;
         line-height: 120%;
         padding-left: 14px;
+
+        &::placeholder{
+            color: #bdbdbd;
+        }
+    }
+}
+
+.form__wrapper{
+    display: flex;
+    flex-direction: column;
+
+    input{
+        margin-bottom: 13px;
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+}
+
+.form__question{
+    textarea{
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        width: 703px;
+        height: 146px;
+        background: #fafafa;
+        resize: none;
+
+        font-family: "Literal", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+        padding: 10px 0 0 14px;
 
         &::placeholder{
             color: #bdbdbd;

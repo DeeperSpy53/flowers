@@ -59,13 +59,15 @@ export default function ContactInfo(){
                         <h2>Остались вопросы? Свяжитесь с нами.</h2>
 
                         <div className={style.form__block}>
-                            <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder='Имя фамилия'/>
-                            <input type="text" value={mail} onChange={(e) => setMail(e.target.value)} placeholder='Эл. почта'/>
-                            <IMaskInput mask="+7 (000) 000-00-00" placeholder='Моб. номер' onChange={(e) => setPhone(e.target.value)}/>
-                        </div>
+                            <div className={style.form__wrapper}>
+                                <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder='Имя фамилия'/>
+                                <input type="text" value={mail} onChange={(e) => setMail(e.target.value)} placeholder='Эл. почта'/>
+                                <IMaskInput mask="+7 (000) 000-00-00" placeholder='Моб. номер' onChange={(e) => setPhone(e.target.value)}/>
+                            </div>
 
-                        <div className={style.form__question}>
-                            <textarea placeholder='Возникший вопрос' value={question} onChange={(e) => setQuestion(e.target.value)}></textarea>
+                            <div className={style.form__question}>
+                                <textarea placeholder='Возникший вопрос' value={question} onChange={(e) => setQuestion(e.target.value)}></textarea>
+                            </div>
                         </div>
 
                         <button>Отправить</button>
