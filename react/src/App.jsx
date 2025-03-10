@@ -10,6 +10,8 @@ import ReviewsPage from './pages/reviews/ReviewsPage.jsx'
 import ContactInfo from './pages/contactinfo/ContactInfo.jsx'
 import Questions from './pages/questions/Questions.jsx'
 import Stock from './pages/stock/Stock.jsx'
+import Error404 from './pages/404/404.jsx'
+import Login from './pages/login/Login.jsx'
 
 export const FlowersContext = createContext();
 
@@ -26,7 +28,9 @@ function App() {
       {/* <ReviewsPage/> */}
       {/* <ContactInfo/> */}
       {/* <Questions/> */}
-      <Stock/>
+      {/* <Stock/> */}
+      {/* <Error404/> */}
+      <Login/>
       <Footer/>
     </FlowersContext.Provider>
   )

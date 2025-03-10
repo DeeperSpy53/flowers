@@ -1,0 +1,40 @@
+.stock{
+    background: #f9f8fb;
+    padding-bottom: 60px;
+}
+
+.stock__wrapper{
+    margin: 0 auto;
+    max-width: 1110px;
+
+    h1{
+        font-family: "Karton", sans-serif;
+        font-weight: 400;
+        font-size: 24px;
+        color: #5b4a58;
+        margin-bottom: 47px;
+    }
+}
+
+.stock__list{
+    // display: flex;
+    // justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 19px;
+}
+
+@media (max-width: 769px){
+    .stock{
+        padding: 0 10px;
+    }
+    .stock__list{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 426px){
+    .stock__list{
+        grid-template-columns: auto;
+    }
+}

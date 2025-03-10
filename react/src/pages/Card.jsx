@@ -9,7 +9,6 @@ import foliageLImg from '../assets/img/foliage_left_card.png'
 import foliagePImg from '../assets/img/foliage_r_card.png'
 import cardLeftImg from '../assets/img/card__left.png'
 
-
 export default function Card({name, img, fresh, price, compound}) {
   const [image, setImage] = useState(0)
   const [size, setSize] = useState(0)
