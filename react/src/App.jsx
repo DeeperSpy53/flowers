@@ -1,4 +1,6 @@
 import { createContext, useState } from 'react'
+import {Routes, Route, BrowserRouter} from 'react-router'
+
 import Header from './components/header/Header'
 import { products } from './products.js'
 import Footer from './components/footer/Footer.jsx'
@@ -21,16 +23,24 @@ function App() {
   return (
     <FlowersContext.Provider value={{flowers, setFlowers}}>
       <Header/>
-      {/* <MainPage /> */}
-      {/* <Card {...products[0]}/> */}
-      {/* <Cart/> */}
-      {/* <PersonalCab/> */}
-      {/* <ReviewsPage/> */}
-      {/* <ContactInfo/> */}
-      {/* <Questions/> */}
-      {/* <Stock/> */}
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<MainPage />}/>
+          <Route path='/card' element={<Card />}>
+            <Route path=":id" element={<Card />} />
+          </Route>
+          <Route path='/cart' element={<Cart/>}/>
+          <Route path='/lk' element={<PersonalCab/>}/>
+          <Route path='/reviews' element={<ReviewsPage/>}>
+            <Route path=":photo" element={<Card />} />
+          </Route>
+          <Route path='/contacts' element={<ContactInfo/>}/>
+          <Route path='/questions' element={<Questions/>}/>
+          <Route path='/stock' element={<Stock/>}/>
+          <Route path='/login' element={<Login/>}/>
+        </Routes>
+      </BrowserRouter>
       {/* <Error404/> */}
-      <Login/>
       <Footer/>
     </FlowersContext.Provider>
   )

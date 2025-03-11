@@ -13,13 +13,13 @@ export default function Footer(){
             <div className={style.footer__nav}>
                 <nav className={style.footerNav__wrapper}>
                     <ul>
-                        <li><a href="#">Каталог</a></li>
-                        <li><a href="#">Скидки</a></li>
-                        <li><a href="#">Отзывы</a></li>
-                        <li><a href="#">Контакты</a></li>
-                        <li><a href="#">Оферта</a></li>
+                        <li><a href="/">Каталог</a></li>
+                        <li><a href="/cart">Скидки</a></li>
+                        <li><a href="/reviews">Отзывы</a></li>
+                        <li><a href="/contacts">Контакты</a></li>
+                        <li><a href="/">Оферта</a></li>
                         <li>
-                            <a href="#">Информация для клиента 
+                            <a href="/questions">Информация для клиента 
                                 <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M1.18848 1.09863L4.09034 4.00012L6.99182 1.09863" stroke="white" />
                                 </svg>

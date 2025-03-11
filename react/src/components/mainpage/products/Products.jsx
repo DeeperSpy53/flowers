@@ -15,7 +15,7 @@ export default function Products(){
     }
 
     return(
-        <div className={style.products}>
+        <div className={style.products} id='products'>
             <div className={style.products__wrapper}>
                 <div className={style.products__block}>
                     <div className={style.products__sort}>

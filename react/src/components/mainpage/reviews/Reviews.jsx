@@ -6,6 +6,7 @@ import img4 from '../../../assets/img/reviews_photo/4.jpg'
 
 import {reviews} from '../../../reviews.js'
 import ReviewItem from './ReviewItem.jsx'
+// import { Link } from 'react-router'
 
 export default function Reviews(){
     return(
@@ -14,7 +15,7 @@ export default function Reviews(){
                 <div className={style.reviews__photo}>
                     <div className={`${style.reviewsPhoto__header} ${style.reviews__headers}`}>
                         <h2><span>Фото</span>хвасты</h2>
-                        <a href="#">Больше фото</a>
+                        <a href='/reviews/photo'>Смотреть все</a>
                     </div>
 
                     <div className={style.reviewsPhoto__list}>
@@ -28,7 +29,7 @@ export default function Reviews(){
                 <div className={style.reviews__list}>
                     <div className={`${style.reviewsList__header} ${style.reviews__headers}`}>
                         <h2>Отзывы</h2>
-                        <a href="#">Смотреть все</a>
+                        <a href='/reviews'>Смотреть все</a>
                     </div>
 
                     <div className={style.reviewsList__content}>

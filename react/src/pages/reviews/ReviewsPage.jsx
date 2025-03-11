@@ -6,9 +6,11 @@ import starImg from '../../assets/img/icons/star.svg'
 import star2Img from '../../assets/img/icons/star_yellow.svg'
 import ReviewsPhoto from '../../components/rewiews/reviewsphoto/ReviewsPhoto'
 import loadImg from '../../assets/img/icons/load.svg'
+import { useParams } from 'react-router'
 
 export default function ReviewsPage(){
-    const [menu, setMenu] = useState(0)
+    const {photo} = useParams();
+    const [menu, setMenu] = useState(photo=='photo'?1:0)
 
     const [name, setName] = useState('')
     const [mail, setMail] = useState('')

@@ -30,6 +30,14 @@ export default function Login(){
                     <hr className={style.form__hr}/>
 
                     <div className={style.form__body}>
+                        {!isLogin && 
+                            <>
+                                <label>
+                                    <span>Имя и фамилия</span>
+                                    <input type="password" value={name} onChange={(e) => setName(e.target.value)}/>
+                                </label>      
+                            </>
+                        }
                         <label>
                             <span>Телефон</span>
                             <IMaskInput mask="+7 (000) 000-00-00"
@@ -41,6 +49,15 @@ export default function Login(){
                             <span>Пароль</span>
                             <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
                         </label>
+
+                        {!isLogin && 
+                            <>
+                                <label>
+                                    <span>Повторите пароль</span>
+                                    <input type="password" value={passwordRepeat} onChange={(e) => setPasswordRepeat(e.target.value)}/>
+                                </label>      
+                            </>
+                        }
 
                         <button type='submit'>Войти</button>
                     </div>

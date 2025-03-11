@@ -3,6 +3,7 @@
 }
 
 .login__wrapper{
+    padding: 60px 0 59px 0;
     max-width: 1110px;
     margin: 0 auto;
     display: flex;
@@ -11,8 +12,12 @@
     form{
         border-radius: 10px;
         width: 357px;
-        height: 313px;
+        // height: 313px;
         background: #fff;
+    }
+
+    img{
+        height: 313px;
     }
 }
 

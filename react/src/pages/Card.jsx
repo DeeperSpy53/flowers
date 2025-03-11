@@ -8,8 +8,19 @@ import { additional } from '../additional'
 import foliageLImg from '../assets/img/foliage_left_card.png'
 import foliagePImg from '../assets/img/foliage_r_card.png'
 import cardLeftImg from '../assets/img/card__left.png'
+import { products } from '../products.js'
+import { useParams } from 'react-router'
+import Error404 from './404/404.jsx'
 
-export default function Card({name, img, fresh, price, compound}) {
+export default function Card(props) {
+  const {id} = useParams()
+
+  const prod = products[id];
+
+  if(prod === undefined)
+    return <Error404/>;
+  
+  const {name, img, fresh, price, compound} = prod;
   const [image, setImage] = useState(0)
   const [size, setSize] = useState(0)
   const [comp, setComp] = useState(0)

@@ -23,10 +23,10 @@ export default function Banner(price = 0){
                     </p>
                 </div>
 
-                <div className={style.banner__cart}>
+                <a className={style.banner__cart} href='/cart'>
                     <img src={cartImg} alt="" />
                     <p>{price===0?totalPrice:0} руб.</p>
-                </div>
+                </a>
             </div>
         </div>
     )

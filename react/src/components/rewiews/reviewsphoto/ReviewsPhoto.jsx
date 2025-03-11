@@ -35,7 +35,7 @@ export default function ReviewsPhoto(){
 
     return(
         <>
-            <div className={style.reviewsphoto}>
+            <div className={style.reviewsphoto} id='photo'>
                 {items}
             </div>
             <ReviewsPages page={page} setPage={setPage} setPrevPage={setPrevPage} key='miskafre2'/>
