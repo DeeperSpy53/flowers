@@ -2,6 +2,7 @@ import style from './login.module.scss'
 import fonImg from '../../assets/img/fon-login.jpg'
 import { useState } from 'react'
 import { IMaskInput } from 'react-imask';
+import api from '../../api.config'
 
 export default function Login(){
     const [isLogin, setIsLogin] = useState(true);
@@ -15,6 +16,16 @@ export default function Login(){
 
     function handleSubmit(e) {
         e.preventDefault();
+
+        if(isLogin){
+            api.post('/login', {phone, password}).then((res) => {
+                console.log(res.data);
+            });
+        } else{
+            api.post('/reg', {phone, password, name}).then((res) => {
+                console.log(res);
+            });
+        }
     }
 
     return(
@@ -34,7 +45,7 @@ export default function Login(){
                             <>
                                 <label>
                                     <span>Имя и фамилия</span>
-                                    <input type="password" value={name} onChange={(e) => setName(e.target.value)}/>
+                                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} minLength='10' required/>
                                 </label>      
                             </>
                         }
@@ -42,19 +53,21 @@ export default function Login(){
                             <span>Телефон</span>
                             <IMaskInput mask="+7 (000) 000-00-00"
                                         placeholder='+_(___) ___-__-__'
-                                        onChange={(e) => setPhone(e.target.value)}/>
+                                        onChange={(e) => setPhone(e.target.value)}
+                                        minLength='15'
+                                        required/>
                         </label>
 
                         <label>
                             <span>Пароль</span>
-                            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} minLength='8' required/>
                         </label>
 
                         {!isLogin && 
                             <>
                                 <label>
                                     <span>Повторите пароль</span>
-                                    <input type="password" value={passwordRepeat} onChange={(e) => setPasswordRepeat(e.target.value)}/>
+                                    <input type="password" value={passwordRepeat} onChange={(e) => setPasswordRepeat(e.target.value)} minLength='8' required/>
                                 </label>      
                             </>
                         }

@@ -1,5 +1,6 @@
 const db = require('../db_connect');
 const bcrypt = require('bcrypt');
+const token = require('./token');
 
 class Login{
     async login(req, res){
@@ -12,9 +13,14 @@ class Login{
         if(user != undefined){
             const passHash = await bcrypt.compare(password, user.password);
             if(passHash){
-                res.json(true)
+                const tokens = token.generationTokens();
+                token.saveToken(user.id, tokens.refreshToken);
+    
+                res.cookie('refreshToken', token.refreshToken, {maxAge: 30*24*60*60*1000, httpOnly: true})
+                res.json({id: user.id, phone: user.phone, accessToken: token.accessToken});
+                
+                return;
             }
-
         } else{
 
         }
@@ -33,11 +39,15 @@ class Login{
                                                             ('${phone}', '${name}', '${passHash}')
                                                             RETURNING *`);
 
-            res.json(true);
+            const user = resQuery.rows[0];
+            const tokens = token.generationTokens();
+            token.saveToken(user.id, tokens.refreshToken);
+
+            res.cookie('refreshToken', token.refreshToken, {maxAge: 30*24*60*60*1000, httpOnly: true})
+            res.json({id: user.id, phone: user.phone, accessToken: token.accessToken});
         } else{
             res.json('Пользователь с таким номером уже зарегистрирован!');
         }
-
     }
 }
 
