@@ -19,9 +19,11 @@ export default function Login(){
 
         if(isLogin){
             api.post('/login', {phone, password}).then((res) => {
+                console.log(res.data);
             });
         } else{
             api.post('/reg', {phone, password, name}).then((res) => {
+                console.log(res);
             });
         }
     }
